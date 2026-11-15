@@ -1,0 +1,346 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Você 💜</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Georgia, serif;
+  color: white;
+  text-align: center;
+  background:
+    linear-gradient(rgba(20,0,30,.60), rgba(20,0,30,.80)),
+    url("https://cdn.discordapp.com/attachments/1562914485897789532/1566178043423097013/image.png?ex=6afa0d77&is=6af8bbf7&hm=236c7c60e0d8157c1e4285f395c663341958ef22e13e39f560dfc95d1bbc1fa9&i=c88d3f9462664cbd");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* PÁGINAS */
+.pagina {
+  min-height: 100vh;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 25px 15px;
+  animation: aparecer 0.8s ease;
+}
+
+.pagina.ativa {
+  display: flex;
+}
+
+/* CARTÕES */
+.card {
+  width: 100%;
+  max-width: 460px;
+  padding: 30px 25px;
+  background: rgba(35,10,45,.86);
+  border: 1px solid rgba(255,255,255,.25);
+  border-radius: 25px;
+  box-shadow: 0 0 30px rgba(210,120,255,.35);
+  backdrop-filter: blur(8px);
+}
+
+h1 {
+  color: #edc5ff;
+  font-size: 30px;
+}
+
+p {
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+/* BOTÕES */
+button {
+  margin-top: 20px;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 30px;
+  background: #d78aff;
+  color: #351044;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: .3s;
+}
+
+button:hover {
+  transform: scale(1.07);
+  background: #edc5ff;
+}
+
+/* RODAPÉ */
+footer {
+  margin-top: 30px;
+  color: #e7c8f5;
+  font-size: 13px;
+}
+
+.developer {
+  margin-top: 12px;
+  color: #d8a5f5;
+  font-size: 15px;
+  letter-spacing: 1px;
+  text-shadow: 0 0 10px #bd68e8;
+}
+
+.developer span {
+  display: block;
+  margin-top: 5px;
+  color: #c5a4d3;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+/* SEGUNDA PÁGINA */
+.music-photo {
+  width: 100%;
+  max-height: 260px;
+  object-fit: cover;
+  border-radius: 18px;
+  margin: 15px 0;
+  box-shadow: 0 0 20px rgba(215,138,255,.3);
+}
+
+#lyrics {
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f0caff;
+  font-size: 19px;
+  line-height: 1.5;
+  animation: brilho 2s infinite alternate;
+}
+
+iframe {
+  width: 100%;
+  height: 152px;
+  border: none;
+  border-radius: 12px;
+  margin-top: 15px;
+}
+
+.description {
+  color: #e9d5f3;
+  font-size: 15px;
+}
+
+/* ANIMAÇÕES */
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes brilho {
+  from {
+    text-shadow: 0 0 5px #d78aff;
+  }
+  to {
+    text-shadow: 0 0 18px #edc5ff;
+  }
+}
+
+/* CORAÇÕES */
+.heart {
+  position: fixed;
+  bottom: -30px;
+  color: #edb5ff;
+  font-size: 20px;
+  pointer-events: none;
+  animation: subir 6s linear forwards;
+  z-index: 10;
+}
+
+@keyframes subir {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- PRIMEIRA PÁGINA -->
+<section id="inicio" class="pagina ativa">
+  <div class="card">
+
+    <h1>Para Você 💜</h1>
+
+    <p>
+      Voce é a luz na minha vida, minha melhor escolha.
+    </p>
+
+    <button onclick="abrirPagina('musica')">
+      Clique aqui 💜
+    </button>
+
+    <footer>
+      <p>Foi feito com muito amor 💜</p>
+
+      <div class="developer">
+        © 2026 | 𝔇𝔢𝔳 𝔏𝔲𝔷
+        <span>Desenvolvedora</span>
+      </div>
+    </footer>
+
+  </div>
+</section>
+
+<!-- SEGUNDA PÁGINA -->
+<section id="musica" class="pagina">
+  <div class="card">
+
+    <h1>Uma música para você 💜</h1>
+
+    <img
+      class="music-photo"
+      src="https://cdn.discordapp.com/attachments/1562914485897789532/1566178043423097013/image.png?ex=6afa0d77&is=6af8bbf7&hm=236c7c60e0d8157c1e4285f395c663341958ef22e13e39f560dfc95d1bbc1fa9&i=c88d3f9462664cbd"
+      alt="Nossa foto"
+    >
+
+    <div id="lyrics">
+      Conhecer você foi a melhor coisa que me aconteceu 💜
+    </div>
+
+    <iframe
+      src="https://open.spotify.com/embed/track/2o2xhyri4aJUtgMGkf5P0J?utm_source=generator"
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+      loading="lazy">
+    </iframe>
+
+    <p class="description">
+      Essa música me faz lembrar de você. 💜
+    </p>
+
+    <button onclick="voltarInicio()">
+      ↩ Voltar ao início
+    </button>
+
+  </div>
+</section>
+
+<script>
+// TROCAR ENTRE AS PÁGINAS
+function abrirPagina(id) {
+  document.querySelectorAll(".pagina").forEach(pagina => {
+    pagina.classList.remove("ativa");
+  });
+
+  document.getElementById(id).classList.add("ativa");
+
+  if (id === "musica") {
+    iniciarFrases();
+  }
+
+  window.scrollTo(0, 0);
+}
+
+// FRASES ANIMADAS
+const frases = [
+  "Conhecer você foi a melhor coisa que me aconteceu 💜",
+  "Seu sorriso deixa tudo mais bonito.",
+  "Eu escolheria você de novo e de novo.",
+  "Você é mais que especial para mim. 💜"
+];
+
+const startTime = 47;
+const endTime = 81;
+const clipDuration = (endTime - startTime) * 1000;
+
+let indice = 0;
+let animacao = null;
+let finalizacao = null;
+
+function iniciarFrases() {
+  pararFrases();
+
+  indice = 0;
+
+  const lyrics = document.getElementById("lyrics");
+  const intervalo = clipDuration / frases.length;
+
+  lyrics.textContent = frases[indice];
+  indice++;
+
+  animacao = setInterval(() => {
+    if (indice < frases.length) {
+      lyrics.textContent = frases[indice];
+      indice++;
+    } else {
+      clearInterval(animacao);
+      animacao = null;
+
+      finalizacao = setTimeout(() => {
+        lyrics.textContent = "Eu batiamo muito 💜";
+      }, intervalo);
+    }
+  }, intervalo);
+}
+
+function pararFrases() {
+  if (animacao) {
+    clearInterval(animacao);
+    animacao = null;
+  }
+
+  if (finalizacao) {
+    clearTimeout(finalizacao);
+    finalizacao = null;
+  }
+}
+
+// VOLTAR PARA A PRIMEIRA PÁGINA
+function voltarInicio() {
+  pararFrases();
+
+  document.getElementById("musica").classList.remove("ativa");
+  document.getElementById("inicio").classList.add("ativa");
+
+  window.scrollTo(0, 0);
+}
+
+// CORAÇÕES FLUTUANTES
+setInterval(() => {
+  const heart = document.createElement("div");
+
+  heart.className = "heart";
+  heart.textContent = "💜";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = (15 + Math.random() * 20) + "px";
+
+  document.body.appendChild(heart);
+
+  setTimeout(() => {
+    heart.remove();
+  }, 6000);
+}, 700);
+</script>
+
+</body>
+</html>
